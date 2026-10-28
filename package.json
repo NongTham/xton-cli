@@ -1,0 +1,31 @@
+{
+  "name": "xton-cli",
+  "version": "4.0.0",
+  "description": "CLI for scaffolding and managing XtonCore Discord.js projects.",
+  "type": "module",
+  "bin": {
+    "xton": "dist/index.js"
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "dev": "npm run build && node dist/index.js",
+    "test": "tsx --test test/cli.test.ts",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": { "node": ">=18.18" },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/prompts": "^2.4.9",
+    "typescript": "^5.7.2",
+    "tsx": "^4.19.2"
+  },
+  "repository": { "type": "git", "url": "git+https://github.com/NongTham/xton-cli.git" },
+  "license": "MIT"
+}
